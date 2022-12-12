@@ -1,0 +1,1 @@
+#Sample React and Django project
