@@ -123,3 +123,5 @@ fabric.properties
 .idea/modules.xml
 .idea/vcs.xml
 .idea/dj-react.iml
+
+/front/node_modules
