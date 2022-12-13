@@ -1,6 +1,6 @@
 import React from 'react';
 import './ForgetPassword.css';
-import {FaRegUser, FaKey} from 'react-icons/fa'
+import {FaRegUser} from 'react-icons/fa';
 import InputGroup from "../../../Components/InputGroup";
 import Button from "../../../Components/Button";
 import Link from "../../../Components/Link";
