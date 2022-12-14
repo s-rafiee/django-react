@@ -48,6 +48,6 @@ export function reducer(state, action) {
                 error: null
             }
         default:
-            throw Error("Action type not allowed.");
+            throw Error("action type not allowed.");
     }
 }
