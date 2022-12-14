@@ -1,7 +1,13 @@
 import React from 'react';
 import {FaKey} from "react-icons/fa";
 
-export default function InputGroup({Icon, inputType, placeholder = ''}) {
+export default function InputGroup({
+                                       Icon,
+                                       inputType,
+                                       value ,
+                                       placeholder = '',
+                                       onChangeHandler = null,
+                                   }) {
     return <>
         <div className="input-group mb-3">
             <span className="input-group-text">
@@ -10,7 +16,10 @@ export default function InputGroup({Icon, inputType, placeholder = ''}) {
             <input
                 className="form-control"
                 type={inputType}
-                placeholder={placeholder}/>
+                placeholder={placeholder}
+                value={value}
+                onChange={onChangeHandler}
+            />
         </div>
 
     </>;

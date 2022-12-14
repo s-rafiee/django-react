@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Signin.css';
 import {FaRegUser, FaKey} from 'react-icons/fa'
 import InputGroup from "../../../Components/InputGroup";
@@ -7,23 +7,50 @@ import Link from "../../../Components/Link";
 import AuthLayout from "../../../Layouts/AuthLayout";
 
 export default function Signin() {
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+
+    function onUserNameChangeHandler(event) {
+        setUserName(event.target.value);
+    }
+
+    const signinSubmitHandler = (e) => {
+        e.preventDefault();
+        alert('Signin')
+    }
     return <>
         <AuthLayout>
             <div className="card p-4">
                 <div className="card-body">
-                    <form>
+                    <form onSubmit={signinSubmitHandler}>
                         <h1>Sign in</h1>
                         <p className="text-medium-emphasis">
                             Sign In to your account
                         </p>
-                        <InputGroup Icon={FaRegUser} inputType={"text"} placeholder={"Username"}/>
-                        <InputGroup Icon={FaKey} inputType={"password"} placeholder={"Password"}/>
+                        <InputGroup
+                            Icon={FaRegUser}
+                            inputType={"text"}
+                            value={userName}
+                            placeholder={"Username"}
+                            onChangeHandler={(e) => {
+                                setUserName(e.target.value);
+                            }}/>
+                        <InputGroup
+                            Icon={FaKey}
+                            inputType={"password"}
+                            value={password}
+                            placeholder={"Password"}
+                            onChangeHandler={(e) => {
+                                setPassword(e.target.value);
+                            }
+                            }/>
                         <div className="row">
                             <div className="col-6">
                                 <Button
                                     className={"btn-primary px-4"}
-                                    btnType={"button"}
-                                    btnText={"Login"}/>
+                                    btnType={"submit"}
+                                    btnText={"Login"}
+                                />
                             </div>
                             <div className="col-6 text-right">
                                 <Button

@@ -15,9 +15,6 @@ import DashboardHome from './Pages/Dashboard/DashboardHome';
 function App() {
     const {token} = useAuthState();
     return (<>
-        {/*<AuthProvider>*/}
-        {/*    <Signin/>*/}
-        {/*</AuthProvider>*/}
         {token ? <DashboardHome/> : <Signin/>}
         {/*<Signup/>*/}
         {/*<ForgetPassword/>*/}
